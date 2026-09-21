@@ -79,6 +79,36 @@
   },
   "contact": {
     "phone": "+9779851179160",
-    "email": "suryakiranbh656@gmail.com"
-  }
+    "email": "suryakiranbh656@gmail.com",
+    "alternate": "9845081087",
+    "whatsapp": "9808764885",
+    "whatsappUrl": "https://web.whatsapp.com/"
+  },
+  "rooms": {
+    "title": "Rooms & Fees",
+    "lead": "Choose the room option that best suits your needs.",
+    "items": [
+      {
+        "name": "Single Seater",
+        "price": "Price: Rs. 17,500 / month",
+        "features": "Private room"
+      },
+      {
+        "name": "Double Seater",
+        "price": "Price: Rs. 14,500 / month",
+        "features": "Shared by 2 students"
+      },
+      {
+        "name": "Three Seater",
+        "price": "Price: Rs. 13,500 / month",
+        "features": "Shared by 3 students"
+      },
+      {
+        "name": "Four Seater",
+        "price": "Price: Rs. 12,500 / month",
+        "features": "Shared by 4 students"
+      }
+    ]
+  },
+  "footer": "© 2026 Suryakiran Boys Hostel. All rights reserved."
 }
