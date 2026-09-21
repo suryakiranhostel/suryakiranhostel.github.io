@@ -1,0 +1,84 @@
+{
+  "site": {
+    "title": "SURYAKIRAN BOYS HOSTEL",
+    "address": "Bihar Marga, Bagbazar Kathmandu"
+  },
+  "images": {
+    "logo": "/media/logo1234.png",
+    "hero": "/media/building-image.jpeg"
+  },
+  "hero": {
+    "title": "SURYAKIRAN BOYS HOSTEL",
+    "text": "Safe, Comfortable & Affordable Boys Hostel in the heart of Kathmandu. Digitiged security system, 24 hrs monitor by CCTV camara."
+  },
+  "about": {
+    "title": "Why Choose Suryakiran Boys Hostel?",
+    "lead": "A safe, comfortable and convenient place to stay for students in Kathmandu.",
+    "cards": [
+      {
+        "icon": "🏠 ",
+        "title": "Comfortable Rooms",
+        "text": "lean and comfortable rooms with suitable options for students."
+      },
+      {
+        "icon": "🔒 ",
+        "title": "Safe & Secure",
+        "text": "A safe and secure environment for students."
+      },
+      {
+        "icon": "📍 ",
+        "title": "Convenient Location",
+        "text": "Located at Bihar Marg, Bagbazar, Kathmandu."
+      },
+      {
+        "icon": "💰",
+        "title": " Affordable Fees",
+        "text": " Reasonable room options to suit different student needs."
+      }
+    ]
+  },
+  "facilities": {
+    "title": "Hostel Facilities 🏢",
+    "lead": "Everything you need for a safe, comfortable and convenient stay.",
+    "items": [
+      {
+        "icon": "🛏️ ",
+        "title": "Comfortable Rooms",
+        "text": "well ventilated and spacious Room"
+      },
+      {
+        "icon": "📶 ",
+        "title": "Wi-Fi / Internet",
+        "text": "Enjoy speed internet service"
+      },
+      {
+        "icon": "🚿 ",
+        "title": "Clean Drinking Water"
+      },
+      {
+        "icon": "⚡ ",
+        "title": "24/7 Electricity"
+      },
+      {
+        "icon": "🍽️ ",
+        "title": "Food / Dining"
+      },
+      {
+        "icon": "🧹 ",
+        "title": "Regular Cleaning"
+      },
+      {
+        "icon": "🔒",
+        "title": " Security"
+      },
+      {
+        "icon": "📚 ",
+        "title": "Study Environment"
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+9779851179160",
+    "email": "suryakiranbh656@gmail.com"
+  }
+}
