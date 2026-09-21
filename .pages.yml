@@ -1,0 +1,181 @@
+media:
+  - name: images
+    label: Website Images
+    input: media
+    output: /media
+    categories: [image]
+    rename: safe
+
+content:
+  - name: site
+    label: Website Content
+    type: file
+    path: data/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: site
+        label: Basic Information
+        type: object
+        fields:
+          - name: title
+            label: Hostel Name
+            type: string
+          - name: address
+            label: Address
+            type: string
+
+      - name: images
+        label: Main Images
+        type: object
+        fields:
+          - name: logo
+            label: Logo
+            type: image
+            options:
+              media: images
+          - name: hero
+            label: Hero Image
+            type: image
+            options:
+              media: images
+
+      - name: hero
+        label: Home Section
+        type: object
+        fields:
+          - name: title
+            label: Main Heading
+            type: string
+          - name: text
+            label: Description
+            type: text
+
+      - name: about
+        label: About / Why Choose Us
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: cards
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: icon
+                type: string
+              - name: title
+                type: string
+              - name: text
+                type: text
+
+      - name: facilities
+        label: Facilities
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: items
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: icon
+                type: string
+              - name: title
+                type: string
+              - name: text
+                type: text
+
+      - name: rooms
+        label: Rooms & Fees
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: items
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: name
+                type: string
+              - name: price
+                type: string
+              - name: features
+                type: text
+              - name: image
+                type: image
+                options:
+                  media: images
+
+      - name: gallery
+        label: Gallery
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: items
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: caption
+                type: string
+              - name: image
+                type: image
+                options:
+                  media: images
+
+      - name: admission
+        label: Online Admission
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: formTitle
+            label: Form Heading
+            type: string
+          - name: formUrl
+            label: Google Form URL
+            type: string
+
+      - name: contact
+        label: Contact Details
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: lead
+            type: text
+          - name: phone
+            type: string
+          - name: alternate
+            label: WhatsApp / Alternate Number
+            type: string
+          - name: whatsapp
+            type: string
+          - name: whatsappUrl
+            type: string
+          - name: email
+            type: string
+
+      - name: footer
+        label: Footer Text
+        type: string
+
+settings:
+  hide: false
+  content:
+    merge: true
