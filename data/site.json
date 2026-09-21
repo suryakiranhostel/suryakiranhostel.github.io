@@ -61,7 +61,8 @@
       },
       {
         "icon": "🍽️ ",
-        "title": "Food / Dining"
+        "title": "Food / Dining",
+        "text": "Hygienic food with veg. and non-veg"
       },
       {
         "icon": "🧹 ",
@@ -110,5 +111,9 @@
       }
     ]
   },
-  "footer": "© 2026 Suryakiran Boys Hostel. All rights reserved."
+  "footer": "© 2026 Suryakiran Boys Hostel. All rights reserved.",
+  "gallery": {
+    "title": "🖼️ Gallery",
+    "lead": "Take a look at Suryakiran Boys Hostel."
+  }
 }
