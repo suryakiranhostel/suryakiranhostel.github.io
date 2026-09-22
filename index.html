@@ -179,5 +179,203 @@ footer{background:#062944;color:#dbe7f2;padding:28px 0;font-size:12px}
 </main>
 
 <footer><div class="container footer"><div>© 2026 Suryakiran Boys Hostel. All rights reserved.</div><div>Safe · Comfortable · Affordable</div></div></footer>
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const res = await fetch("./data/site.json?v=" + Date.now());
+    if (!res.ok) throw new Error("site.json load failed");
+
+    const data = await res.json();
+
+    /* SITE / HEADER */
+    if (data.site) {
+      const brandTitle = document.querySelector(".brand strong");
+      const brandAddress = document.querySelector(".brand span");
+      const logo = document.querySelector(".brand img");
+
+      if (brandTitle && data.site.title) brandTitle.textContent = data.site.title;
+      if (brandAddress && data.site.address) brandAddress.textContent = data.site.address;
+      if (logo && data.images?.logo) logo.src = data.images.logo;
+    }
+
+    /* HERO */
+    if (data.hero) {
+      const hero = document.querySelector("#home");
+      if (hero) {
+        const title = hero.querySelector("h1");
+        const text = hero.querySelector("p");
+        const image = hero.querySelector(".hero-photo img");
+
+        if (title && data.hero.title) title.textContent = data.hero.title;
+        if (text && data.hero.text) text.textContent = data.hero.text;
+        if (image && data.images?.hero) image.src = data.images.hero;
+      }
+    }
+
+    /* ABOUT */
+    if (data.about) {
+      const section = document.querySelector("#about");
+
+      if (section) {
+        const heading = section.querySelector(".section-head h2");
+        const lead = section.querySelector(".section-head .lead");
+        const grid = section.querySelector(".grid4");
+
+        if (heading && data.about.title) heading.textContent = data.about.title;
+        if (lead && data.about.lead) lead.textContent = data.about.lead;
+
+        if (grid && Array.isArray(data.about.cards)) {
+          grid.innerHTML = "";
+
+          data.about.cards.forEach(card => {
+            grid.innerHTML += `
+              <div class="card">
+                <div class="icon">${card.icon || ""}</div>
+                <h3>${card.title || ""}</h3>
+                <p>${card.text || ""}</p>
+              </div>
+            `;
+          });
+        }
+      }
+    }
+
+    /* FACILITIES */
+    if (data.facilities) {
+      const section = document.querySelector("#facilities");
+
+      if (section) {
+        const heading = section.querySelector(".section-head h2");
+        const lead = section.querySelector(".section-head .lead");
+        const grid = section.querySelector(".grid4");
+
+        if (heading && data.facilities.title)
+          heading.textContent = data.facilities.title;
+
+        if (lead && data.facilities.lead)
+          lead.textContent = data.facilities.lead;
+
+        if (grid && Array.isArray(data.facilities.items)) {
+          grid.innerHTML = "";
+
+          data.facilities.items.forEach(item => {
+            grid.innerHTML += `
+              <div class="card">
+                <div class="icon">${item.icon || ""}</div>
+                <h3>${item.title || ""}</h3>
+                ${item.text ? `<p>${item.text}</p>` : ""}
+              </div>
+            `;
+          });
+        }
+      }
+    }
+
+    /* ROOMS & FEES */
+    if (data.rooms) {
+      const section = document.querySelector("#rooms");
+
+      if (section) {
+        const heading = section.querySelector(".section-head h2");
+        const lead = section.querySelector(".section-head .lead");
+        const roomsBox = section.querySelector(".rooms");
+
+        if (heading && data.rooms.title)
+          heading.textContent = data.rooms.title;
+
+        if (lead && data.rooms.lead)
+          lead.textContent = data.rooms.lead;
+
+        if (roomsBox && Array.isArray(data.rooms.items)) {
+          const oldImages = [...roomsBox.querySelectorAll(".mini img")];
+
+          roomsBox.innerHTML = "";
+
+          data.rooms.items.forEach((room, index) => {
+            const image = oldImages[index]
+              ? oldImages[index].src
+              : (data.images?.hero || "");
+
+            roomsBox.innerHTML += `
+              <div class="room-card">
+                <div class="mini">
+                  <img src="${image}" alt="${room.name || "Room"}">
+                </div>
+                <div class="room-body">
+                  <h3>${room.name || ""}</h3>
+                  <div class="price">${room.price || ""}</div>
+                  <div class="features">${room.features || ""}</div>
+                </div>
+              </div>
+            `;
+          });
+        }
+      }
+    }
+
+    /* GALLERY */
+    if (data.gallery) {
+      const section = document.querySelector("#gallery");
+
+      if (section) {
+        const heading = section.querySelector(".section-head h2");
+        const lead = section.querySelector(".section-head .lead");
+
+        if (heading && data.gallery.title)
+          heading.textContent = data.gallery.title;
+
+        if (lead && data.gallery.lead)
+          lead.textContent = data.gallery.lead;
+
+        if (Array.isArray(data.gallery.items)) {
+          const gallery = section.querySelector(".gallery");
+
+          if (gallery) {
+            gallery.innerHTML = "";
+
+            data.gallery.items.forEach(item => {
+              gallery.innerHTML += `
+                <figure>
+                  <img src="${item.image || ""}" alt="${item.title || "Suryakiran Boys Hostel"}">
+                  <figcaption>${item.title || ""}</figcaption>
+                </figure>
+              `;
+            });
+          }
+        }
+      }
+    }
+
+    /* CONTACT */
+    if (data.contact) {
+      const section = document.querySelector("#contact");
+
+      if (section) {
+        const list = section.querySelector(".contact-list");
+
+        if (list) {
+          list.innerHTML = `
+            ${data.contact.phone ? `<div>📞 <strong>${data.contact.phone}</strong></div>` : ""}
+            ${data.contact.alternate ? `<div>📞 <strong>${data.contact.alternate}</strong></div>` : ""}
+            ${data.contact.whatsapp ? `<div>💬 <a href="${data.contact.whatsappUrl || "#"}" target="_blank">WhatsApp: ${data.contact.whatsapp}</a></div>` : ""}
+            ${data.contact.email ? `<div>✉️ <a href="mailto:${data.contact.email}">${data.contact.email}</a></div>` : ""}
+          `;
+        }
+      }
+    }
+
+    /* FOOTER */
+    if (data.footer) {
+      const footer = document.querySelector("footer .footer div");
+      if (footer) footer.textContent = data.footer;
+    }
+
+    console.log("Suryakiran CMS data loaded successfully.");
+
+  } catch (error) {
+    console.error("CMS data load error:", error);
+  }
+});
+</script>
 </body>
 </html>
