@@ -92,28 +92,42 @@
       {
         "name": "Single Seater",
         "price": "Price: Rs. 17,500 / month",
-        "features": "Private room"
+        "features": "Private room",
+        "image": "/media/single-bed-room-sample1.jpg"
       },
       {
         "name": "Double Seater",
         "price": "Price: Rs. 14,500 / month",
-        "features": "Shared by 2 students"
+        "features": "Shared by 2 students",
+        "image": "/media/double-bed-room-sample-2.jpg"
       },
       {
         "name": "Three Seater",
         "price": "Price: Rs. 13,500 / month",
-        "features": "Shared by 3 students"
+        "features": "Shared by 3 students",
+        "image": "/media/triple-bed-room-sample-1.jpg"
       },
       {
         "name": "Four Seater",
         "price": "Price: Rs. 12,500 / month",
-        "features": "Shared by 4 students"
+        "features": "Shared by 4 students",
+        "image": "/media/four-seater-bed-room-sample-1.jpg"
       }
     ]
   },
   "footer": "© 2026 Suryakiran Boys Hostel. All rights reserved.",
   "gallery": {
     "title": "🖼️ Gallery",
-    "lead": "Take a look at Suryakiran Boys Hostel."
+    "lead": "Take a look at Suryakiran Boys Hostel.",
+    "items": [
+      {
+        "caption": "Kitchen ",
+        "image": "/media/kitchen-sample-1.png"
+      },
+      {
+        "caption": "Dinning hall ",
+        "image": "/media/dinning-hall-sample-1.jpg"
+      }
+    ]
   }
 }
