@@ -441,35 +441,61 @@ WhatsApp Us
 
 
 <section id="admission" class="alt">
-<div class="container">
+  <div class="container admission-wrap">
 
-<div class="section-head">
-<h2>Online Admission</h2>
-<p class="lead">
-विद्यार्थीहरूले website बाटै admission form भर्न सक्नुहुन्छ।
-</p>
-</div>
+    <div class="section-head">
+      <div>
+        <h2>Online Admission</h2>
+        <p class="lead">
+          विद्यार्थीहरूले तलको Google Form website बाटै भरेर admission application submit गर्न सक्नुहुन्छ।
+        </p>
+      </div>
+    </div>
 
-<div class="admission-card">
+    <div class="admission-card">
 
-<div class="admission-top">
-<h2>📝 Suryakiran Boys Hostel – Admission Form</h2>
-<p>
-कृपया आवश्यक विवरणहरू भर्नुहोस्।
-</p>
-</div>
+      <div class="admission-top">
+        <h2>📝 Suryakiran Boys Hostel – Admission Form</h2>
 
-<iframe
-class="form-frame"
-src="https://docs.google.com/forms/d/e/1FAIpQLSebpJvKMyhzfjzsRit5VoBQRyqXkliO6cRZ_OoBemUiXSpI1Q/viewform?embedded=true"
-title="Suryakiran Boys Hostel Online Admission Form"
-loading="lazy">
-</iframe>
+        <p>
+          Admission का लागि तलको button थिचेर form खोल्नुहोस्।
+        </p>
 
-</div>
-</div>
+        <button
+          type="button"
+          class="btn red"
+          id="open-admission-form">
+          FILL OUT ADMISSION FORM
+        </button>
+      </div>
+
+      <div
+        id="admission-form-container"
+        style="display:none; margin-top:20px;">
+
+        <iframe
+          class="form-frame"
+          id="admission-form-frame"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSebpJvKMyhzfjzsRit5VoBQRyqXkliO6cRZ_OoBemUiXSpI1Q/viewform?embedded=true"
+          title="Suryakiran Boys Hostel Online Admission Form"
+          loading="lazy">
+        </iframe>
+
+        <div style="text-align:center; margin-top:15px;">
+          <button
+            type="button"
+            class="btn green"
+            id="close-admission-form">
+            CLOSE FORM
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
-
 
 <section id="contact">
 <div class="container contact">
