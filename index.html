@@ -984,7 +984,40 @@ error
 
 
 loadSiteData();
+document.addEventListener("DOMContentLoaded", function () {
 
+  const openBtn = document.getElementById("open-admission-form");
+  const closeBtn = document.getElementById("close-admission-form");
+  const formContainer = document.getElementById("admission-form-container");
+
+  if (openBtn && formContainer) {
+    openBtn.addEventListener("click", function () {
+      formContainer.style.display = "block";
+      openBtn.style.display = "none";
+
+      formContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  if (closeBtn && formContainer) {
+    closeBtn.addEventListener("click", function () {
+      formContainer.style.display = "none";
+
+      if (openBtn) {
+        openBtn.style.display = "inline-flex";
+      }
+
+      openBtn.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+  }
+
+});
 </script>
 
 </body>
