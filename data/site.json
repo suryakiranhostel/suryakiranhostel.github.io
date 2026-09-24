@@ -127,6 +127,10 @@
       {
         "caption": "Dinning hall ",
         "image": "/media/dinning-hall-sample-1.jpg"
+      },
+      {
+        "caption": "promotional image",
+        "image": "/media/promotional-piction.png"
       }
     ]
   }
