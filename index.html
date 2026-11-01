@@ -7,7 +7,16 @@
 <style>
 :root{--navy:#07345b;--blue:#0b5fa5;--red:#e51d2a;--ink:#172333;--muted:#64748b;--soft:#f4f8fc;--white:#fff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.55;background:#fff}a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e7edf3;box-shadow:0 2px 10px #0000000d}.nav{min-height:76px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:11px;min-width:250px}.brand img{width:70px;height:70px;object-fit:contain}.brand strong{font-size:19px;line-height:1.05;color:var(--navy)}.brand span{display:block;font-size:11px;color:var(--muted);margin-top:3px}nav{margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:700;align-items:center}nav a:hover{color:var(--red)}.wa{background:#17a65b;color:#fff;padding:9px 14px;border-radius:7px}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e7edf3;box-shadow:0 2px 10px #0000000d}.nav{min-height:76px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:11px;min-width:250px}.brand img{width:70px;height:70px;object-fit:contain}.brand strong{font-size:19px;line-height:1.05;color:var(--navy)}.brand span{display:block;font-size:11px;color:var(--muted);margin-top:3px}nav{margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:700;align-items:center}nav a:hover{color:var(--red)}.wa{background:#17a65b;color:#fff;padding:9px 14px;border-radius:7px} .call-now{ <a class="call-now" href="tel:9851179160" aria-label="Call Suryakiran Boys Hostel">📞</a>
+  background:#e51d2a;
+  color:#fff;
+  padding:9px 14px;
+  border-radius:7px;
+  font-weight:800;
+  display:inline-block;
+  white-space:nowrap;
+}
+.call-now:hover{background:#b91520}
 .hero{background:linear-gradient(135deg,#07345b,#0b568f);color:#fff;padding:62px 0}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}.kicker{color:#ffd45b;font-weight:800;font-size:13px;text-transform:uppercase}h1{font-size:clamp(36px,5vw,58px);line-height:1.02;margin:9px 0 14px}.hero p{max-width:590px;color:#e6f1fb;font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{padding:11px 17px;border-radius:7px;font-weight:800;font-size:13px;background:#fff;color:var(--navy);display:inline-block;border:0;cursor:pointer}.btn.red{background:var(--red);color:#fff}.btn.green{background:#16a55b;color:#fff}.hero-photo{height:300px;border-radius:16px;overflow:hidden;border:5px solid #ffffff22}.hero-photo img{width:100%;height:100%;object-fit:cover}
 section{padding:60px 0}section.alt{background:var(--soft)}.section-head{margin-bottom:25px}h2{font-size:31px;color:var(--navy);margin:0}.lead{color:var(--muted);max-width:680px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid #e1e9f1;border-radius:12px;padding:20px}.icon{font-size:25px;margin-bottom:9px}.card h3{font-size:16px;margin:0 0 6px;color:var(--navy)}.card p{margin:0;color:var(--muted);font-size:13px}
 .rooms{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.room-card{border:1px solid #dbe4ed;border-radius:12px;overflow:hidden;background:#fff}.room-card .mini{height:180px;overflow:hidden;background:#f4f8fc}.room-card .mini img{width:100%;height:100%;object-fit:cover;display:block}.room-body{padding:16px}.room-body h3{margin:0 0 6px;color:var(--navy);font-size:18px}.price{font-size:20px;font-weight:900;color:var(--red);margin:7px 0}.features{color:var(--muted);font-size:12px}
@@ -38,7 +47,8 @@ footer{background:#062944;color:#dbe7f2;padding:28px 0;font-size:12px}.footer{di
 function esc(value){return String(value??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
 function setText(id,value){const el=document.getElementById(id);if(el&&value!==undefined&&value!==null)el.textContent=value}
 function normalizePath(path){if(!path)return "";return path.startsWith("/")?"."+path:path}
-async function loadSiteData(){try{const response=await fetch("./data/site.json?v="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Could not load data/site.json");const data=await response.json();
+async function loadSiteData(){try{const response=await fetch("./data/site.json?v="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Could not load data/site.json");const data=await response.json(); contactList.insertAdjacentHTML("beforeend",
+`<div><a class="call-now" href="tel:9851179160" aria-label="Call Suryakiran Boys Hostel">📞 Call Now</a></div>`);
 setText("site-title",data.site?.title);setText("site-address",data.site?.address);setText("map-address",data.site?.address);
 const logo=document.getElementById("logo");if(logo&&data.images?.logo)logo.src=normalizePath(data.images.logo);
 setText("hero-title",data.hero?.title);setText("hero-text",data.hero?.text);const heroImage=document.getElementById("hero-image");if(heroImage&&data.images?.hero)heroImage.src=normalizePath(data.images.hero);
